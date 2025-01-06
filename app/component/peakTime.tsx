@@ -9,7 +9,7 @@ import { FaTruck } from "react-icons/fa6";
 export default function Peak_time(){
     // State untuk dropdown
     const [dateOption, setDateOption] = useState<string>('TODAY');
-    const [timeOption, setTimeOption] = useState<string>('Morning');
+    const [timeOption, setTimeOption] = useState<string>('MORNING');
     const [isDateDropdownOpen, setIsDateDropdownOpen] = useState<boolean>(false);
     const [isTimeDropdownOpen, setIsTimeDropdownOpen] = useState<boolean>(false);
 
@@ -25,7 +25,7 @@ export default function Peak_time(){
     };
 
     return (
-        <div className='bg-white shadow-md rounded-lg p-5 w-full max-w-md mx-auto'>
+        <div className='bg-white shadow-md rounded-lg p-5 w-full max-w-md mx-auto m-60 ml-10'>
             {/* Dropdown Buttons */}
             <div className='flex justify-between mb-5'>
                 {/* Date Dropdown */}
@@ -93,7 +93,7 @@ export default function Peak_time(){
                     {/* Motorcycle Row */}
                     <tr>
                         <td className='flex items-center py-3'>
-                            <FaMotorcycle className='text-white w-6 h-6'/>
+                            <FaMotorcycle className='text-black w-6 h-6 mr-2'/>
                             Motorcycle
                         </td>
                         <td className='text-center'>112</td>
@@ -103,7 +103,7 @@ export default function Peak_time(){
                     {/* Car Row */}
                     <tr>
                         <td className='flex items-center py-3'>
-                            <FaCarSide className='text-white w-6 h-6'/>
+                            <FaCarSide className='text-black w-6 h-6 mr-2'/>
                             Car
                         </td>
                         <td className='text-center'>112</td>
@@ -113,7 +113,7 @@ export default function Peak_time(){
                     {/* Truck Row */}
                     <tr>
                         <td className='flex items-center py-3'>
-                            <FaTruck className='text-white w-6 h-6'/>
+                            <FaTruck className='text-black w-6 h-6 mr-2'/>
                             Truck
                         </td>
                         <td className='text-center'>112</td>
@@ -123,7 +123,7 @@ export default function Peak_time(){
                     {/* Bus Row */}
                     <tr>
                         <td className='flex items-center py-3'>
-                            <FaBus className='text-white w-6 h-6'/>
+                            <FaBus className='text-black w-6 h-6 mr-2'/>
                             Bus
                         </td>
                         <td className='text-center'>112</td>
