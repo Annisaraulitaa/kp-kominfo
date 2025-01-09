@@ -11,25 +11,24 @@ export default function Home() {
       <Navbar/>
 
       <div className="min-h-screen bg-gray-900 py-8 px-4">
-      {/* Grid Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
-        {/* Komponen Peak Time */}
-        <div className="col-span-1">
-          <Peak_time />
-        </div>
+        {/* Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          {/* Komponen Peak Time */}
+          <div className="col-span-1">
+            <Peak_time />
+          </div>
 
-        {/* Komponen Live Video */}
-        <div className="col-span-1">
-          <Live />
-        </div>
+          {/* Komponen Live Video */}
+          <div className="col-span-1">
+            <Live />
+          </div>
 
-        {/* Komponen Crowd Estimation */}
-        <div className="col-span-1">
-          <Crowd_est />
+          {/* Komponen Crowd Estimation */}
+          <div className="col-span-1">
+            <Crowd_est />
+          </div>
         </div>
       </div>
-    </div>
-
     </div>
   );
 }
