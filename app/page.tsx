@@ -6,13 +6,15 @@ import Live from "./component/liveVideo";
 
 export default function Home() {
   return (
-    <div className="w-screen h-700 bg-gray-700">
+    <div className="w-screen h-screen bg-gray-700">
       <Navbar/>
 
-      <div className="container mx-auto p-4">
-        <div className="flex flex-col items-center justify-center gap-4 p-6 rounded-lg shadow-md">
-          <Live/>
+      <div className="container mx-auto">
+        <div className="flex justify-between items-center gap-8 p-6 rounded-lg shadow-md flex-wrap">
           <Peak_time/> 
+          <div className="w-full md:w-1/3 mt-4 md:mt-0">
+            <Live/>
+          </div>
           <Crowd_est/>
         </div>
       </div>
