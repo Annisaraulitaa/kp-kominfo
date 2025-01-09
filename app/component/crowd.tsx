@@ -8,7 +8,7 @@ export default function CrowdEstimation() {
 
 
   return (
-    <div className='flex justify-center items-center min-h-screen bg-gray-100'>
+    <div className='flex justify-center bg-gray-100'>
       <div className='bg-white shadow-md rounded-lg p-6 w-96'>
         {/* Judul */}
         <div className='text-center mb-4'>
