@@ -25,7 +25,7 @@ export default function Peak_time(){
     };
 
     return (
-        <div className='bg-white shadow-md rounded-lg p-5 w-full max-w-md mx-auto m-60 ml-10'>
+        <div className='bg-white shadow-md rounded-lg p-5 w-full max-w-md mx-auto m-60'>
             {/* Dropdown Buttons */}
             <div className='flex justify-between mb-5'>
                 {/* Date Dropdown */}
