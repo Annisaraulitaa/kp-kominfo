@@ -27,6 +27,7 @@ export default function Home() {
           <div className="col-span-1">
             <Crowd_est />
           </div>
+          
         </div>
       </div>
     </div>
