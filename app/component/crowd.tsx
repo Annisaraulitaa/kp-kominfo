@@ -8,8 +8,8 @@ export default function CrowdEstimation() {
 
 
   return (
-    <div className='flex justify-center bg-gray-100'>
-      <div className='bg-white shadow-md rounded-lg p-6 w-96'>
+    <div className='flex justify-center bg-gray-100 py-6'>
+      <div className='bg-white shadow-md rounded-lg p-6 w-full max-w-md'>
         {/* Judul */}
         <div className='text-center mb-4'>
           <p className='text-sm bg-blue-100 text-blue-600 font-semibold px-3 py-1 rounded-full inline-block'>
@@ -54,43 +54,3 @@ export default function CrowdEstimation() {
     </div>
   )
 }
-
-//   return (
-//     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
-//       {/* Right Lane */}
-//       <div className="bg-white shadow-md rounded-lg p-5">
-//         <h2 className="text-lg font-semibold">Crowd Estimation (Right Lane)</h2>
-//         <div className="mt-3">
-//           <input
-//             type="range"
-//             min="0"
-//             max="100"
-//             value={rightLaneValue}
-//             onChange={(e) => setRightLaneValue(e.target.value)}
-//             className="w-full accent-red-500"
-//           />
-//           <p className="text-right mt-2 text-sm text-gray-600">
-//             Value: {rightLaneValue}%
-//           </p>
-//         </div>
-//       </div>
-
-//       {/* Left Lane */}
-//       <div className="bg-white shadow-md rounded-lg p-5">
-//         <h2 className="text-lg font-semibold">Crowd Estimation (Left Lane)</h2>
-//         <div className="mt-3">
-//           <input
-//             type="range"
-//             min="0"
-//             max="100"
-//             value={leftLaneValue}
-//             onChange={(e) => setLeftLaneValue(e.target.value)}
-//             className="w-full accent-blue-500"
-//           />
-//           <p className="text-right mt-2 text-sm text-gray-600">
-//             Value: {leftLaneValue}%
-//           </p>
-//         </div>
-//       </div>
-//     </div>
-//   )

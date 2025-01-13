@@ -7,17 +7,28 @@ import Live from "./component/liveVideo";
 export default function Home() {
   return (
     <div className="w-screen h-screen bg-gray-700">
+      {/* Navbar */}
       <Navbar/>
 
-      <div className="container mx-auto">
-        <div className="flex justify-between items-center gap-8 rounded-lg shadow-md flex-wrap">
-          <Peak_time/> 
-          <div className="w-full md:w-1/3 mt-4 md:mt-0">
-            <Live/>
-          </div>
-          <Crowd_est/>
+      <div className="min-h-screen bg-gray-900 py-8 px-4">
+      {/* Grid Layout */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        {/* Komponen Peak Time */}
+        <div className="col-span-1">
+          <Peak_time />
+        </div>
+
+        {/* Komponen Live Video */}
+        <div className="col-span-1">
+          <Live />
+        </div>
+
+        {/* Komponen Crowd Estimation */}
+        <div className="col-span-1">
+          <Crowd_est />
         </div>
       </div>
+    </div>
 
     </div>
   );
