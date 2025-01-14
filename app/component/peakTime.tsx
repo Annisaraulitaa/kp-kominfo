@@ -85,12 +85,12 @@ export default function Peak_time(){
             </div>
 
             {/* Table */}
-            <table className='w-full text-left'>
+            <table className='w-full text-left border-collapse'>
                 <thead>
                     <tr className='text-gray-500 text-sm'>
                         <th className='pb-3'>Vehicle</th>
                         <th className='pb-3 text-center'>Quantity</th>
-                        <th className='pb-3 text-center'>+/- with yesterday</th>
+                        <th className='pb-3 text-end'>+/- with yesterday</th>
                     </tr>
                 </thead>
                 <tbody>
