@@ -1,4 +1,4 @@
-import { SetStateAction, useState } from "react";
+import React, { useState } from "react";
 import {
   BarChart,
   Bar,
@@ -14,26 +14,47 @@ import {
   Cell,
 } from "recharts";
 
-const data = [
-  { time: "09:00", Motorcycle: 65, Car: 35, Truck: 20, Bus: 10 },
-  { time: "09:30", Motorcycle: 50, Car: 45, Truck: 25, Bus: 15 },
-  { time: "10:00", Motorcycle: 70, Car: 55, Truck: 30, Bus: 20 },
-  { time: "10:30", Motorcycle: 40, Car: 20, Truck: 15, Bus: 10 },
-  { time: "11:00", Motorcycle: 75, Car: 60, Truck: 35, Bus: 25 },
-];
+// Data lengkap untuk 24 jam
+const fullData = Array.from({ length: 24 }, (_, i) => ({
+  time: `${i.toString().padStart(2, "0")}:00`,
+  Motorcycle: Math.floor(Math.random() * 100),
+  Car: Math.floor(Math.random() * 80),
+  Truck: Math.floor(Math.random() * 50),
+  Bus: Math.floor(Math.random() * 30),
+}));
 
 const COLORS = ["#8884d8", "#82ca9d", "#ffc658", "#ff8042"];
 
 export default function ChartComponent() {
   const [chartType, setChartType] = useState("Histogram");
 
-  const handleChartChange = (event: { target: { value: SetStateAction<string>; }; }) => {
+  const handleChartChange = (event: { target: { value: React.SetStateAction<string>; }; }) => {
     setChartType(event.target.value);
   };
 
+  // Data agregasi untuk Pie Chart (total dari 24 jam)
+  const aggregatedData = [
+    {
+      name: "Motorcycle",
+      value: fullData.reduce((sum, entry) => sum + entry.Motorcycle, 0),
+    },
+    {
+      name: "Car",
+      value: fullData.reduce((sum, entry) => sum + entry.Car, 0),
+    },
+    {
+      name: "Truck",
+      value: fullData.reduce((sum, entry) => sum + entry.Truck, 0),
+    },
+    {
+      name: "Bus",
+      value: fullData.reduce((sum, entry) => sum + entry.Bus, 0),
+    },
+  ];
+
   return (
     <div className="p-4 bg-white rounded shadow-lg">
-      {/* Dropdown */}
+      {/* Dropdown untuk memilih jenis chart */}
       <div className="mb-4">
         <select
           value={chartType}
@@ -46,31 +67,41 @@ export default function ChartComponent() {
         </select>
       </div>
 
-      {/* Conditional Rendering for Charts */}
+      {/* Conditional Rendering untuk Chart */}
       {chartType === "Histogram" && (
-        <BarChart
-          width={500}
-          height={300}
-          data={data}
-          margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="time" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="Motorcycle" fill="#8884d8" />
-          <Bar dataKey="Car" fill="#82ca9d" />
-          <Bar dataKey="Truck" fill="#ffc658" />
-          <Bar dataKey="Bus" fill="#ff8042" />
-        </BarChart>
+        <div>
+
+
+          {/* Chart dengan scroll */}
+          <div
+            className="overflow-x-auto"
+            style={{ width: "100%", maxWidth: "600px" }}
+          >
+            <BarChart
+              width={fullData.length * 50}
+              height={300}
+              data={fullData}
+              margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="time" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Bar dataKey="Motorcycle" fill="#8884d8" />
+              <Bar dataKey="Car" fill="#82ca9d" />
+              <Bar dataKey="Truck" fill="#ffc658" />
+              <Bar dataKey="Bus" fill="#ff8042" />
+            </BarChart>
+          </div>
+        </div>
       )}
 
       {chartType === "Line" && (
         <LineChart
           width={500}
           height={300}
-          data={data}
+          data={fullData}
           margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
         >
           <CartesianGrid strokeDasharray="3 3" />
@@ -88,58 +119,16 @@ export default function ChartComponent() {
       {chartType === "Pie" && (
         <PieChart width={500} height={300}>
           <Pie
-            data={data}
-            dataKey="Motorcycle"
-            nameKey="time"
+            data={aggregatedData}
+            dataKey="value"
+            nameKey="name"
             cx="50%"
             cy="50%"
-            outerRadius={50}
+            outerRadius={100}
             fill="#8884d8"
+            label={(entry) => `${entry.name}: ${entry.value}`} // Menampilkan label di luar pie
           >
-            {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-            ))}
-          </Pie>
-          <Pie
-            data={data}
-            dataKey="Car"
-            nameKey="time"
-            cx="50%"
-            cy="50%"
-            innerRadius={60}
-            outerRadius={80}
-            fill="#82ca9d"
-            label
-          >
-            {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-            ))}
-          </Pie>
-          <Pie
-            data={data}
-            dataKey="Truck"
-            nameKey="time"
-            cx="50%"
-            cy="50%"
-            innerRadius={90}
-            outerRadius={110}
-            fill="#ffc658"
-          >
-            {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-            ))}
-          </Pie>
-          <Pie
-            data={data}
-            dataKey="Bus"
-            nameKey="time"
-            cx="50%"
-            cy="50%"
-            innerRadius={120}
-            outerRadius={140}
-            fill="#ff8042"
-          >
-            {data.map((entry, index) => (
+            {aggregatedData.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
             ))}
           </Pie>
