@@ -10,7 +10,7 @@ export default function Navbar() {
         <img 
         src="\images\logo-pemkot.png" 
         alt="Logo" 
-        className="w-10 h-auto mr-3"
+        className="w-12 h-auto mr-3"
         />
       </a>
 

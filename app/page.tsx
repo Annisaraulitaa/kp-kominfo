@@ -6,11 +6,11 @@ import Live from "./component/liveVideo";
 
 export default function Home() {
   return (
-    <div className="w-screen h-screen bg-gray-700">
+    <div className="w-screen h-screen bg-gray-400">
       {/* Navbar */}
       <Navbar/>
 
-      <div className="min-h-screen bg-gray-900 py-8 px-4">
+      <div className="min-h-screen bg-gray-400 py-8 px-4">
         {/* Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {/* Komponen Peak Time */}
