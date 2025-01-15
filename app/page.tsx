@@ -18,9 +18,9 @@ export default function Home() {
       <div className="py-8 px-4">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 max-w-7xl mx-auto">
           
-          {/* Traffic Summary (Kiri Atas) */}
+          {/* Lane (Kiri Atas) */}
           <div className="col-span-3">
-            <TrafficSummary />
+            <Lane />
           </div>
 
           {/* Live Video (Tengah Atas) */}
@@ -28,9 +28,9 @@ export default function Home() {
             <Live />
           </div>
 
-          {/* Total Quantity (Kanan Atas) */}
+          {/* Traffic Summary (Kanan Atas) */}
           <div className="col-span-3">
-            <Lane />
+            <TrafficSummary />
           </div>
 
           {/* Peak Time (Kiri Bawah) */}
