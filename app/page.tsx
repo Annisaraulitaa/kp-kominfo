@@ -34,17 +34,17 @@ export default function Home() {
           </div>
 
           {/* Peak Time (Kiri Bawah) */}
-          <div className="col-span-4">
+          <div className="col-span-3">
             <Peak_time />
           </div>
 
           {/* Chart (Tengah Bawah) */}
-          <div className="col-span-4">
+          <div className="col-span-6">
             <Chart />
           </div>
 
           {/* Crowd Estimation (Kanan Bawah) */}
-          <div className="col-span-4">
+          <div className="col-span-3">
             <Crowd_est />
           </div>
           
