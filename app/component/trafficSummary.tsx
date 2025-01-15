@@ -37,7 +37,7 @@ export default function TrafficSummary() {
         </div>
         {/* Yesterday */}
         <div className="bg-white p-4 rounded-lg shadow-sm">
-          <div className="flex justify-end items-center mb-4">
+          <div className="flex justify-between items-center mb-4">
             <h2 className="font-semibold text-gray-700">YESTERDAY</h2>
             <span className="text-gray-500 text-xs">23/01/2024</span>
           </div>
