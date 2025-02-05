@@ -69,51 +69,50 @@ export default function ChartComponent() {
 
       {/* Conditional Rendering untuk Chart */}
       {chartType === "Histogram" && (
-        <div>
-
-
-          {/* Chart dengan scroll */}
-          <div
-            className="overflow-x-auto"
-            style={{ width: "100%", maxWidth: "600px" }}
+        <div
+          className="relative w-full overflow-x-auto"
+          style={{
+            maxWidth: "100%", // Pastikan container tidak meluas di luar kolom
+          }}
+        >
+          <BarChart
+            width={fullData.length * 50}
+            height={300}
+            data={fullData}
+            margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
           >
-            <BarChart
-              width={fullData.length * 50}
-              height={300}
-              data={fullData}
-              margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
-            >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="time" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Bar dataKey="Motorcycle" fill="#8884d8" />
-              <Bar dataKey="Car" fill="#82ca9d" />
-              <Bar dataKey="Truck" fill="#ffc658" />
-              <Bar dataKey="Bus" fill="#ff8042" />
-            </BarChart>
-          </div>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="time" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="Motorcycle" fill="#8884d8" />
+            <Bar dataKey="Car" fill="#82ca9d" />
+            <Bar dataKey="Truck" fill="#ffc658" />
+            <Bar dataKey="Bus" fill="#ff8042" />
+          </BarChart>
         </div>
       )}
 
       {chartType === "Line" && (
-        <LineChart
-          width={500}
-          height={300}
-          data={fullData}
-          margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="time" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Line type="monotone" dataKey="Motorcycle" stroke="#8884d8" />
-          <Line type="monotone" dataKey="Car" stroke="#82ca9d" />
-          <Line type="monotone" dataKey="Truck" stroke="#ffc658" />
-          <Line type="monotone" dataKey="Bus" stroke="#ff8042" />
-        </LineChart>
+        <div className="relative w-full">
+          <LineChart
+            width={500}
+            height={300}
+            data={fullData}
+            margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="time" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Line type="monotone" dataKey="Motorcycle" stroke="#8884d8" />
+            <Line type="monotone" dataKey="Car" stroke="#82ca9d" />
+            <Line type="monotone" dataKey="Truck" stroke="#ffc658" />
+            <Line type="monotone" dataKey="Bus" stroke="#ff8042" />
+          </LineChart>
+        </div>
       )}
 
       {chartType === "Pie" && (

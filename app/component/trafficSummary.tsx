@@ -5,13 +5,13 @@ export default function TrafficSummary() {
   const yesterdayData = [100, 100, 100, 100];
 
   return (
-    <div className="bg-gray-100 p-6 rounded-xl shadow-md w-full max-w-md mx-1">
-      <h1 className="text-center text-lg font-bold text-gray-700 mb-4 px-4 py-2 rounded-md border border-[#c7d7ff] bg-[#eaf1ff]">
+    <div className="bg-white p-6 rounded-xl shadow-md w-full max-w-md mx-1">
+      <h1 className="text-center text-lg font-bold text-gray-700 mb-4 px-4 py-2 rounded-md border border-[#f6f6f6] bg-[#eaf1ff]">
         TOTAL QUANTITY
       </h1>
       <div className="space-y-6">
         {/* Today */}
-        <div className="bg-white p-4 rounded-lg shadow-sm">
+        <div className="bg-white p-4 rounded-lg shadow-md border">
           <div className="flex justify-between items-center mb-4">
             <h2 className="font-semibold text-gray-700">TODAY</h2>
             <span className="text-gray-500 text-xs">24/01/2024</span>
@@ -36,7 +36,7 @@ export default function TrafficSummary() {
           </div>
         </div>
         {/* Yesterday */}
-        <div className="bg-white p-4 rounded-lg shadow-sm">
+        <div className="bg-white p-4 rounded-lg shadow-md border">
           <div className="flex justify-between items-center mb-4">
             <h2 className="font-semibold text-gray-700">YESTERDAY</h2>
             <span className="text-gray-500 text-xs">23/01/2024</span>
