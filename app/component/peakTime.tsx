@@ -21,7 +21,7 @@ export default function PeakTime() {
     return (
         <div className="bg-white shadow-md rounded-lg p-5 w-full max-w-lg mx-auto flex flex-col gap-5">
             {/* Dropdown Buttons */}
-            <div className="flex flex-col sm:flex-row sm:justify-start gap-4 mb-5 w-full">
+            <div className="flex flex-col sm:flex-row sm:justify-start gap-4 mb-5 mt-3 w-full">
                 {/* Date Dropdown */}
                 <div className="relative w-full sm:w-1/2">
                     <button
