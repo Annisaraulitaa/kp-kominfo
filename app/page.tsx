@@ -7,6 +7,7 @@ import Live from "./component/liveVideo";
 import TrafficSummary from "./component/trafficSummary";
 import Chart from "./component/chart";
 import Lane from "./component/lane";
+import DownloadButton from "./component/downloadButton";
 
 export default function Home() {
   return (
@@ -14,8 +15,8 @@ export default function Home() {
       {/* Navbar */}
       <Navbar />
 
-      {/* Kontainer Utama */}
-      <div className="py-8 px-4">
+      {/* Tambahkan padding-top agar konten tidak tertutup navbar */}
+      <div className="pt-20 py-8 px-4">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 max-w-7xl mx-auto">
           
           {/* Lane (Kiri Atas) */}
@@ -47,9 +48,11 @@ export default function Home() {
           <div className="col-span-3">
             <Crowd_est />
           </div>
-          
         </div>
       </div>
+
+      {/* Tambahkan komponen DownloadButton */}
+      <DownloadButton />
     </div>
   );
 }

@@ -1,16 +1,15 @@
 import React from 'react';
 import { FaLocationDot } from "react-icons/fa6";
 
-
 export default function Navbar() {
   return (
-    <nav className='flex items-center bg-white shadow-md p-4 h-16'>
+    <nav className='fixed top-0 left-0 w-full bg-white shadow-md p-4 h-16 z-50 flex items-center'>
       {/* Logo */}
       <a href="/" className="flex items-center">
         <img 
-        src="\images\logo-pemkot.png" 
-        alt="Logo" 
-        className="w-12 h-auto mr-3"
+          src="\images\logo-pemkot.png" 
+          alt="Logo" 
+          className="w-12 h-auto mr-3"
         />
       </a>
 
@@ -23,5 +22,5 @@ export default function Navbar() {
         <p className="text-gray-600 text-sm sm:text-base">Pettarani Andi Djemma</p>
       </div>
     </nav>
-  )
+  );
 }
