@@ -13,7 +13,7 @@ export default function CrowdEstimation() {
         {/* Judul */}
         <div className='text-center mb-4'>
           <p className='text-sm bg-blue-100 text-blue-600 font-semibold px-4 py-2 rounded-lg inline-block'>
-            Crowd Estimation An Hour Ago
+            CROWD ESTIMATION
           </p>
         </div>
 
@@ -32,7 +32,7 @@ export default function CrowdEstimation() {
             <span>fluent</span>
             <span>slow</span>
           </div>
-          <h3 className='flex text-sm text-gray-500'>Dideteksi terdapat ... kendaraan </h3>
+          <h3 className='flex text-sm text-gray-500'>Detected there are ... vehicle </h3>
         </div>
 
         {/* Left Lane */}
@@ -50,7 +50,7 @@ export default function CrowdEstimation() {
             <span>fluent</span>
             <span>slow</span>
           </div>
-          <h3 className='flex text-sm text-gray-500'>Dideteksi terdapat ... kendaraan </h3>
+          <h3 className='flex text-sm text-gray-500'>Detected there are ... vehicle </h3>
         </div>
       </div>
     </div>
