@@ -16,38 +16,57 @@ export default function Home() {
       <Navbar />
 
       {/* Tambahkan padding-top agar konten tidak tertutup navbar */}
-      <div className="pt-20 py-8 px-4">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 max-w-7xl mx-auto">
-          
-          {/* Lane (Kiri Atas) */}
-          <div className="col-span-3">
-            <Lane />
+      <div className="pt-20 py-3 px-2 sm:py-5 sm:px-4 md:py-8">
+        <div className="grid grid-cols-1 gap-3 w-full max-w-7xl mx-auto">
+
+          {/* Top Row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3 sm:gap-4 md:gap-6">
+            {/* Lane (Kiri Atas) */}
+            <div className="sm:col-span-3 lg:col-span-3 md:col-span-3">
+              <div className="bg-white rounded-lg shadow-sm p-4 w-full place-items-center">
+                <Lane />
+              </div>
+            </div>
+
+            {/* Live Video (Tengah Atas) */}
+            <div className="w-full sm:col-span-3 lg:col-span-6 order-first sm:order-none md:col-span-3">
+              <div className="bg-white rounded-lg shadow-sm p-4 w-full">
+                <Live />
+              </div>
+            </div>
+
+            {/* Traffic Summary (Kanan Atas) */}
+            <div className="w-full sm:col-span-3 lg:col-span-3 md:col-span-3">
+              <div className="bg-white rounded-lg shadow-sm p-4 w-full place-items-center">
+                <TrafficSummary />
+              </div>
+            </div>
           </div>
 
-          {/* Live Video (Tengah Atas) */}
-          <div className="col-span-6">
-            <Live />
+          {/* Bottom Row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3 sm:gap-4 md:gap-6">
+            {/* Peak Time (Kiri Bawah) */}
+            <div className="w-full sm:col-span-3 lg:col-span-3 md:col-span-3">
+              <div className="bg-white rounded-lg shadow-sm p-4 w-full">
+                <Peak_time />
+              </div>
+            </div>
+
+            {/* Chart (Tengah Bawah) */}
+            <div className="w-full sm:col-span-3 lg:col-span-6 order-first sm:order-none md:col-span-3">
+              <div className="bg-white rounded-lg shadow-sm p-4 w-full">
+                <Chart />
+              </div>
+            </div>
+
+            {/* Crowd Estimation (Kanan Bawah) */}
+            <div className="w-full sm:col-span-1 lg:col-span-3 md:col-span-3">
+              <div className="bg-white rounded-lg shadow-sm p-4 w-full">
+                <Crowd_est />
+              </div>
+            </div>
           </div>
 
-          {/* Traffic Summary (Kanan Atas) */}
-          <div className="col-span-3">
-            <TrafficSummary />
-          </div>
-
-          {/* Peak Time (Kiri Bawah) */}
-          <div className="col-span-3">
-            <Peak_time />
-          </div>
-
-          {/* Chart (Tengah Bawah) */}
-          <div className="col-span-6">
-            <Chart />
-          </div>
-
-          {/* Crowd Estimation (Kanan Bawah) */}
-          <div className="col-span-3">
-            <Crowd_est />
-          </div>
         </div>
       </div>
 
