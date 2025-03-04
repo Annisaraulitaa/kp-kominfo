@@ -53,11 +53,20 @@ export default function Home() {
             </div>
 
             {/* Chart (Tengah Bawah) */}
-            <div className="w-full sm:col-span-3 lg:col-span-6 order-first sm:order-none md:col-span-3">
-              <div className="bg-white rounded-lg shadow-sm p-4 w-full">
-                <Chart />
+            <div className="bg-white w-full rounded-lg shadow-sm sm:col-span-3 lg:col-span-6 order-first sm:order-none md:col-span-3">
+              {/* Outer box (full column width, with shadow & background) */}
+              <div className="w-full">
+                {/* Inner scroll container (only the chart area scrolls horizontally) */}
+                <div className="bg-white overflow-x-auto shadow-sm rounded-lg">
+                  <div className="bg-white inline-block p-4 min-w-max rounded-lg">
+                    {/* Your Chart component */}
+                    <Chart />
+                  </div>
+                </div>
               </div>
             </div>
+
+
 
             {/* Crowd Estimation (Kanan Bawah) */}
             <div className="w-full sm:col-span-1 lg:col-span-3 md:col-span-3">
