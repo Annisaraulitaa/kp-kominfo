@@ -48,3 +48,12 @@ export async function fetchVehicleTable(dateOpt: string, timeOpt: string): Promi
     }
     return res.json();
 }
+
+// 3) /export_csv?date=YYYY-MM-DD
+export async function fetchExportCsv(dateStr: string): Promise<any> {
+    const res = await fetch(`${BASE_URL}/export?date=${dateStr}`);
+    if (!res.ok) {
+        throw new Error(`Failed to fetch /export_csv: ${res.statusText}`);
+    }
+    return res;
+}
